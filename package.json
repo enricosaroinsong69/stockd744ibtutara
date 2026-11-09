@@ -1,0 +1,36 @@
+{
+  "name": "stok-daihatsu-d744",
+  "productName": "Stok Daihatsu D744",
+  "version": "1.0.0",
+  "description": "Stok Daihatsu D744 Kotamobagu — jendela desktop",
+  "main": "main.js",
+  "author": "Astra Daihatsu D744",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "id.astra.daihatsu.stokd744",
+    "productName": "Stok Daihatsu D744",
+    "files": ["main.js", "preload.js", "offline.html", "icon.ico"],
+    "win": {
+      "target": [
+        { "target": "nsis",     "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Stok Daihatsu D744"
+    },
+    "portable": { "artifactName": "StokDaihatsuD744-portable-${version}.exe" }
+  }
+}
